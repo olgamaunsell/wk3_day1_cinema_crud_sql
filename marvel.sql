@@ -185,8 +185,17 @@ INSERT INTO movies (title, year, show_time) VALUES
 
 UPDATE movies SET show_time = '21:30' WHERE title = 'Guardians of the Galaxy' ;
 
--- Select all statements to check sql statements have completed correctly
-
+-- Select all statements to check sql statements above have completed correctly
 SELECT * FROM movies;
 
 SELECT * FROM people;
+
+-- Research how to delete multiple entries from your table in a single command.
+
+DELETE FROM movies WHERE title = 'Guardians of the Galaxy 2';
+
+DELETE FROM movies WHERE year = '2013';
+
+DELETE FROM movies WHERE show_time = '21:30';
+
+SELECT * FROM movies;
