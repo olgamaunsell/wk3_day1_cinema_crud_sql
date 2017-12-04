@@ -147,3 +147,68 @@ INSERT INTO "shows_users" (show_id, user_id) VALUES (13, 19);
 INSERT INTO "shows_users" (show_id, user_id) VALUES (12, 20);
 INSERT INTO "shows_users" (show_id, user_id) VALUES (11, 21);
 
+-- SECTION 1
+-- This section involves more complex queries. You will need to go and find out about aggregate funcions in SQL to answer some of the next questions.
+--
+-- 1. Select the names and prices of all shows, ordered by price in ascending order.
+--
+SELECT * FROM shows ORDER BY price;
+
+-- 2. Select the average price of all shows.
+--
+SELECT AVG(price) from shows;
+
+-- 3. Select the price of the least expensive show.
+--
+
+SELECT MIN(price) from shows;
+
+-- 4. Select the sum of the price of all shows.
+--
+SELECT SUM(price) from shows;
+
+-- 5. Select the sum of the price of all shows whose prices is less than £20.
+--
+SELECT SUM(price) from shows WHERE price < 20.00 ;
+
+-- 6. Select the name and price of the most expensive show.
+--
+
+  SELECT name as Name, price as Price
+  FROM shows
+  WHERE price IN (SELECT MAX(price) from shows);
+
+-- 7. Select the name and price of the second from cheapest show.
+-- ***still to do ***
+
+-- 8. Select the names of all users whose names start with the letter "M".
+--
+SELECT name FROM users WHERE name LIKE 'M%';
+
+-- 9. Select the names of users whose names contain "er".
+
+SELECT name FROM users WHERE name LIKE '%er%';
+
+-- Section 2
+--
+-- The following questions can be answered by using nested SQL statements but ideally you should learn about JOIN clauses to answer them.
+--
+-- 1. Select the time for the Edinburgh Royal Tattoo.
+--
+-- select * from shows;
+-- select * from users;
+-- select * from times;
+-- select * from shows_users;
+
+-- Select the number of users who want to see "Shitfaced Shakespeare".
+--
+-- SELECT * FROM shows_users WHERE show_id = 2;
+
+SELECT name
+FROM users
+INNER JOIN shows_users ON users.id=shows_users.user_id AND shows_users.show_id = 2;
+
+
+-- Select all of the user names and the count of shows they're going to see.
+--
+-- SELECT all users who are going to a show at 17:15.
