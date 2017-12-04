@@ -154,46 +154,39 @@ SELECT name FROM people;
 
 -- 3. Oops! Someone at CodeClan spelled Lorna's name wrong! Change it to reflect the proper spelling (Noble)
 
-SELECT * FROM people;
 
 UPDATE people SET name = 'Lorna Noble' WHERE id = 20;
 
-SELECT * FROM people;
-
-
-
-SELECT name FROM people
-WHERE id = 5;
 
 -- 5. The cinema is showing 'Batman Begins', but Batman is DC, not Marvel! Delete the entry from the 'movies' table.
 
 DELETE FROM movies
 WHERE title = 'Batman Begins';
 
-SELECT * FROM movies;
 
 -- 6. Create a new entry in the 'people' table with the name of one of the instructors
 
 INSERT INTO people (name) VALUES
 ('John Harper');
 
-SELECT * FROM people;
 
 -- 7. Alex has decided to hijack our movie evening, Remove him from the table of people.
 
 DELETE FROM people WHERE id = 21;
-
-SELECT * FROM people;
 
 -- 8. The cinema has just heard that they will be holding an exclusive midnight showing of 'Guardians of the Galaxy 2'!! Create a new entry in the 'movies' table to reflect this.
 
 INSERT INTO movies (title, year, show_time) VALUES
 ('Guardians of the Galaxy 2', 2017, '00:00');
 
-SELECT * FROM movies;
+
 
 -- 9. The cinema would also like to make the Guardian movies a back to back feature. Update the 'Guardians of the Galaxy' show time from 17:55 to 21:30
 
 UPDATE movies SET show_time = '21:30' WHERE title = 'Guardians of the Galaxy' ;
 
+-- Select all statements to check sql statements have completed correctly
+
 SELECT * FROM movies;
+
+SELECT * FROM people;
